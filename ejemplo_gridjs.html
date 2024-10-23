@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid.js Example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css">
+</head>
+<body>
+    <div id="wrapper"></div>
+    <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+    <script>
+        new gridjs.Grid({
+            columns: [
+                { id: 'name', name: 'Nombre', sort: true },
+                { id: 'email', name: 'Correo Electrónico', sort: true },
+                { id: 'address', name: 'Dirección', sort: true },
+            ],
+            data: [
+                ["Tiger Nixon", "tiger@example.com", "Edinburgh"],
+                ["Garrett Winters", "garrett@example.com", "Tokyo"],
+                ["Ashton Cox", "ashton@example.com", "San Francisco"],
+                // más datos aquí...
+            ],
+            language: {
+                search: {
+                    placeholder: 'Buscar...'
+                },
+                sort: {
+                    sortAsc: 'Ordenar Ascendente',
+                    sortDesc: 'Ordenar Descendente'
+                },
+                pagination: {
+                    previous: 'Anterior',
+                    next: 'Siguiente',
+                    showing: 'Mostrando',
+                    results: () => 'Registros',
+                },
+                loading: 'Cargando...',
+                noRecordsFound: 'No se encontraron registros',
+                error: 'Ocurrió un error'
+            }
+        }).render(document.getElementById("wrapper"));
+    </script>
+</body>
+</html>
